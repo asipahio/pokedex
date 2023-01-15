@@ -4,3 +4,6 @@ This application was created using the create-react-app. To run the application 
 
 Since the application is using React 18, concurrent rendering is supported out of the box. Pre react 18 you would have to use concurrend mode. 
 
+To generate new components generate-react-cli is used. This just creates an empty component with a test file. 
+
+![Alt text](pikachu.png "Pikachu")
