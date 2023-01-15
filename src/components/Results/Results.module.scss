@@ -1,0 +1,30 @@
+.Results {
+    .ImgContainer {
+        position: relative;
+        z-index: 2;
+        border-radius: 50%;
+        text-align: center;
+    }
+
+    .DetailContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 30px 60px;
+        border-radius: 10px;
+        background-color: #fff;
+        width: 100%;
+        margin-top: -80px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .Attribute {
+        padding: 20px 0;
+    }
+
+    .AttributeText {
+        padding-right: 10px;
+        border-right: 1px solid #eee;
+        margin: 0;
+    }
+}
