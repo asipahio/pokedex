@@ -2,9 +2,19 @@
 
 This application was created using the create-react-app. To run the application you can run `npm start` and to build the application you can run `npm run build` which are standard with `create-react-app`. To run tests, run `npm test` or `npm test -- --coverage .` to get the coverage report. Some files are excluded from the test coverage and the list of these files are under `package.json`. They were excluded as either implementation detail or they would be tested through integration tests which is not in the scope of this implementation. 
 
-Since the application is using React 18, concurrent rendering is supported out of the box. Pre react 18 you would have to use concurrend mode. 
+Since the application is using React 18, concurrent rendering is supported out of the box. Pre react 18 you would have to use concurrent mode. 
 
 To generate new components generate-react-cli is used. This just creates an empty component with a test file. 
+
+The user is able to see the abilities, types, basic information, image, species information of a pokemon and also is able to navigate through different evolutions. The user is also able to see the previously viewed pokemons using the dropdown next to the search button.
+
+Some file information:
+- `Results.tsx`: Pokemon details
+- `Search.tsx`: Search bar
+- `pokemon.ts`: Pokemon service for both the redux api and the slice
+- `pokemonUtils.ts`: Util library to do data manipulation between the redux api and components
+
+Rest of the files are either a matching test file for the above or the standard react files such as `app.tsx`, `index.tsx`
 
 ![Alt text](pikachu.png "Pikachu")
 
