@@ -1,6 +1,18 @@
-import { Species } from "./IPokemon";
+import { ISpecies } from "./IEvolutionChain";
 
-export interface PokemonSpecies
+export interface IPokemonSpecies
 {
-    evolution_chain: Species;
+    evolution_chain: ISpecies;
+    flavor_text_entries: IFlavorTextEntries[]
+}
+
+export interface IFlavorTextEntries
+{
+    flavor_text: string
+    language: ILanguage
+}
+
+export interface ILanguage
+{
+    name: string
 }

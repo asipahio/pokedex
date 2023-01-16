@@ -1,5 +1,5 @@
 .Results {
-    .ImgContainer {
+    .ImageContainer {
         position: relative;
         z-index: 2;
         border-radius: 50%;
@@ -16,6 +16,7 @@
         width: 100%;
         margin-top: -80px;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        text-align: left;
     }
 
     .Attribute {
@@ -24,7 +25,15 @@
 
     .AttributeText {
         padding-right: 10px;
-        border-right: 1px solid #eee;
         margin: 0;
+    }
+
+    .Species {
+        max-height: 250px;
+        overflow-y: scroll;
+    }
+
+    .Progress {
+        padding-top: 12px;
     }
 }

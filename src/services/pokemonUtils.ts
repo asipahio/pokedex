@@ -1,9 +1,9 @@
-import { Chain, EvolutionChain } from "../@types/IEvolutionChain";
+import { IChain, IEvolutionChain } from "../@types/IEvolutionChain";
 
 export const pokemonUtils = {
-    transformEvolutionChainResponse: (response: EvolutionChain) =>
+    transformEvolutionChainResponse: (response: IEvolutionChain) =>
     {
-        const getLevels = (obj: Chain, arr: string[]): string[] =>
+        const getLevels = (obj: IChain, arr: string[]): string[] =>
         {
             if (obj.species) {
                 arr.push(obj.species.name);

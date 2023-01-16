@@ -1,82 +1,54 @@
-export interface Pokemon
+import { ISpecies } from "./IEvolutionChain";
+
+export interface IPokemon
 {
-    abilities: Ability[];
+    abilities: IAbility[];
     base_experience: number;
-    forms: Species[];
-    game_indices: GameIndex[];
+    forms: ISpecies[];
+    game_indices: IGameIndex[];
     height: number;
     held_items: any[];
     id: number;
     is_default: boolean;
     location_area_encounters: string;
-    moves: Move[];
+    moves: IMove[];
     name: string;
     order: number;
     past_types: any[];
-    species: Species;
-    sprites: Sprites;
-    stats: Stat[];
-    types: Type[];
+    species: ISpecies;
+    sprites: ISprites;
+    stats: IStat[];
+    types: IType[];
     weight: number;
 }
 
-export interface Ability
+export interface IAbility
 {
-    ability: Species;
+    ability: ISpecies;
     is_hidden: boolean;
     slot: number;
 }
 
-export interface Species
-{
-    name: string;
-    url: string;
-}
-
-export interface GameIndex
+export interface IGameIndex
 {
     game_index: number;
-    version: Species;
+    version: ISpecies;
 }
 
-export interface Move
+export interface IMove
 {
-    move: Species;
-    version_group_details: VersionGroupDetail[];
+    move: ISpecies;
+    version_group_details: IVersionGroupDetail[];
 }
 
-export interface VersionGroupDetail
+export interface IVersionGroupDetail
 {
     level_learned_at: number;
-    move_learn_method: Species;
-    version_group: Species;
+    move_learn_method: ISpecies;
+    version_group: ISpecies;
 }
 
-export interface GenerationV
-{
-    "black-white": Sprites;
-}
-
-export interface GenerationIv
-{
-    "diamond-pearl": Sprites;
-    "heartgold-soulsilver": Sprites;
-    platinum: Sprites;
-}
-
-export interface Versions
-{
-    "generation-i": GenerationI;
-    "generation-ii": GenerationIi;
-    "generation-iii": GenerationIii;
-    "generation-iv": GenerationIv;
-    "generation-v": GenerationV;
-    "generation-vi": { [key: string]: Home };
-    "generation-vii": GenerationVii;
-    "generation-viii": GenerationViii;
-}
-
-export interface Sprites
+export interface ISprites
 {
     back_default: string;
     back_female: null;
@@ -86,35 +58,11 @@ export interface Sprites
     front_female: null;
     front_shiny: string;
     front_shiny_female: null;
-    other?: Other;
-    versions?: Versions;
-    animated?: Sprites;
+    other?: IOther;
+    animated?: ISprites;
 }
 
-export interface GenerationI
-{
-    "red-blue": RedBlue;
-    yellow: RedBlue;
-}
-
-export interface RedBlue
-{
-    back_default: string;
-    back_gray: string;
-    back_transparent: string;
-    front_default: string;
-    front_gray: string;
-    front_transparent: string;
-}
-
-export interface GenerationIi
-{
-    crystal: Crystal;
-    gold: Gold;
-    silver: Gold;
-}
-
-export interface Crystal
+export interface ICrystal
 {
     back_default: string;
     back_shiny: string;
@@ -126,7 +74,7 @@ export interface Crystal
     front_transparent: string;
 }
 
-export interface Gold
+export interface IGold
 {
     back_default: string;
     back_shiny: string;
@@ -135,20 +83,13 @@ export interface Gold
     front_transparent?: string;
 }
 
-export interface GenerationIii
-{
-    emerald: OfficialArtwork;
-    "firered-leafgreen": Gold;
-    "ruby-sapphire": Gold;
-}
-
-export interface OfficialArtwork
+export interface IOfficialArtwork
 {
     front_default: string;
     front_shiny: string;
 }
 
-export interface Home
+export interface IHome
 {
     front_default: string;
     front_female: null;
@@ -156,39 +97,28 @@ export interface Home
     front_shiny_female: null;
 }
 
-export interface GenerationVii
-{
-    icons: DreamWorld;
-    "ultra-sun-ultra-moon": Home;
-}
-
-export interface DreamWorld
+export interface IDreamWorld
 {
     front_default: string;
     front_female: null;
 }
 
-export interface GenerationViii
+export interface IOther
 {
-    icons: DreamWorld;
+    dream_world: IDreamWorld;
+    home: IHome;
+    "official-artwork": IOfficialArtwork;
 }
 
-export interface Other
-{
-    dream_world: DreamWorld;
-    home: Home;
-    "official-artwork": OfficialArtwork;
-}
-
-export interface Stat
+export interface IStat
 {
     base_stat: number;
     effort: number;
-    stat: Species;
+    stat: ISpecies;
 }
 
-export interface Type
+export interface IType
 {
     slot: number;
-    type: Species;
+    type: ISpecies;
 }

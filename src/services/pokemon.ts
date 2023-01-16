@@ -1,18 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { Chain, EvolutionChain } from '../@types/IEvolutionChain'
-import { Pokemon } from '../@types/IPokemon'
-import { PokemonSpecies } from '../@types/IPokemonSpecies'
+import { IPokemon } from '../@types/IPokemon'
+import { IPokemonSpecies } from '../@types/IPokemonSpecies'
 import { pokemonUtils } from './pokemonUtils'
 
 export const pokemonApi = createApi({
     reducerPath: 'pokemonApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2/' }),
     endpoints: (builder) => ({
-        getPokemonByName: builder.query<Pokemon, string>({
+        getPokemonByName: builder.query<IPokemon, string>({
             query: (name) => `pokemon/${name.toLowerCase()}`,
         }),
-        getPokemonSpecies: builder.query<PokemonSpecies, string>({
+        getPokemonSpecies: builder.query<IPokemonSpecies, string>({
             query: (name) => `pokemon-species/${name.toLowerCase()}`,
         }),
         getEvolutionChain: builder.query<string[], string>({

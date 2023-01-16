@@ -59,11 +59,7 @@
                                 "turn_upside_down": false
                             }
                         ],
-                        "evolves_to": [
-                            {
-                                "random-object": "doesnt exist"
-                            }
-                        ],
+                        "evolves_to": [],
                         "is_baby": false,
                         "species": {
                             "name": "raichu",

@@ -1,23 +1,23 @@
-export interface EvolutionChain
+export interface IEvolutionChain
 {
     baby_trigger_item: null;
-    chain: Chain;
+    chain: IChain;
     id: number;
 }
 
-export interface Chain
+export interface IChain
 {
-    evolution_details: EvolutionDetail[];
-    evolves_to: Chain[];
-    is_baby: boolean;
-    species: Species;
+    evolution_details?: IEvolutionDetail[];
+    evolves_to?: IChain[];
+    is_baby?: boolean;
+    species?: ISpecies;
 }
 
-export interface EvolutionDetail
+export interface IEvolutionDetail
 {
     gender: null;
     held_item: null;
-    item: Species | null;
+    item: ISpecies | null;
     known_move: null;
     known_move_type: null;
     location: null;
@@ -31,11 +31,11 @@ export interface EvolutionDetail
     relative_physical_stats: null;
     time_of_day: string;
     trade_species: null;
-    trigger: Species;
+    trigger: ISpecies;
     turn_upside_down: boolean;
 }
 
-export interface Species
+export interface ISpecies
 {
     name: string;
     url: string;

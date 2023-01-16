@@ -1,14 +1,11 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Results from '../../../components/Results/Results';
 import { useParams } from 'react-router-dom';
 import { useGetEvolutionChainQuery, useGetPokemonByNameQuery, useGetPokemonSpeciesQuery } from '../../../services/pokemon';
 import { useDispatch } from 'react-redux';
-import { Pokemon } from '../../../@types/IPokemon';
 import mockPokemon from '../../json/pokemon.json';
 import mockPokemonSpecies from '../../json/pokemon-species.json';
-import mockEvolutionChain from '../../json/evolution-chain.json';
 
 const mockeduseGetPokemonByNameQuery = useGetPokemonByNameQuery as jest.Mock<any>;
 jest.mock('../../../services/pokemon')
@@ -29,7 +26,6 @@ jest.mock('../../../components/Search/Search', () => () => <div data-testid="Sea
 
 describe('<Results />', () =>
 {
-    const url = "http://localhost";
     const mockedDispatchFn = jest.fn();
     beforeEach(() =>
     {
